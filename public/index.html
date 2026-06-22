@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriMais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="profile-card">
+          <img id="company-logo" class="avatar" alt="Logo NutriMais" />
+          <h1 id="company-name">NutriMais</h1>
+          <div class="stats">
+            <div><strong id="total-meals">0</strong><span>Qtd. Refeições</span></div>
+            <div><strong id="total-calories">0</strong><span>Qtd. Calorias</span></div>
+          </div>
+        </div>
+
+        <button id="meal-tab" class="meal-tab" disabled>
+          <img src="./img/meal.svg" alt="" class="tab-icon" />
+          <span>Refeição</span>
+        </button>
+
+        <footer class="sidebar-footer">
+          <h2>NutriMais</h2>
+          <div class="socials">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <img src="./img/instagram.svg" alt="Instagram" class="social-icon" />
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <img src="./img/facebook.svg" alt="Facebook" class="social-icon" />
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-link" aria-label="TikTok">
+              <img src="./img/tiktok.svg" alt="TikTok" class="social-icon" />
+              <span>TikTok</span>
+            </a>
+          </div>
+          <small>Copyright-2026</small>
+        </footer>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <button id="auth-btn" class="btn-dark">Login</button>
+        </header>
+
+        <nav class="filters" id="filters">
+          <button data-type="cafe_da_manha">Café da manhã</button>
+          <button data-type="almoco">Almoço</button>
+          <button data-type="jantar">Jantar</button>
+          <button data-type="lanche">Lanche</button>
+        </nav>
+
+        <section id="meal-form-section" class="meal-form hidden">
+          <h2>Crie sua refeição</h2>
+          <div class="form-grid">
+            <div>
+              <label for="meal-type">Tipo da refeição</label>
+              <select id="meal-type">
+                <option value="">Selecione</option>
+                <option value="cafe_da_manha">Café da manhã</option>
+                <option value="almoco">Almoço</option>
+                <option value="jantar">Jantar</option>
+                <option value="lanche">Lanche</option>
+              </select>
+              <small class="error" id="error-type"></small>
+            </div>
+            <div>
+              <label for="meal-description">Descrição</label>
+              <input id="meal-description" placeholder="Ex: frango, arroz e salada" />
+              <small class="error" id="error-description"></small>
+            </div>
+            <div>
+              <label for="meal-calories">Calorias (kcal)</label>
+              <input id="meal-calories" placeholder="Ex: 550" />
+              <small class="error" id="error-calories"></small>
+            </div>
+            <div>
+              <label for="meal-protein">Proteínas (g)</label>
+              <input id="meal-protein" placeholder="Ex: 35" />
+              <small class="error" id="error-protein"></small>
+            </div>
+          </div>
+          <button id="create-meal" class="btn-dark">Criar Refeição</button>
+        </section>
+
+        <section id="meals-list" class="meals"></section>
+        <div id="pagination" class="pagination"></div>
+      </main>
+    </div>
+
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h3>Login</h3>
+          <button id="close-modal"><img src="./img/close.svg" alt="Fechar" class="modal-close-icon" /></button>
+        </div>
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" />
+        <label for="login-password">Senha</label>
+        <input id="login-password" type="password" />
+        <small id="login-error" class="error"></small>
+        <div class="modal-actions">
+          <button id="submit-login" class="btn-dark">Login</button>
+          <button id="cancel-login">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <template id="meal-card-template">
+      <article class="meal-card">
+        <div class="meal-header">
+          <h3 class="meal-title"></h3>
+          <time class="meal-date"></time>
+        </div>
+        <div class="meal-body">
+          <img class="meal-avatar" alt="Foto do usuário" />
+          <div>
+            <strong class="meal-user"></strong>
+            <p class="meal-description"></p>
+            <div class="metrics">
+              <p><span class="calories"></span><small>Calorias</small></p>
+              <p><span class="protein"></span><small>Proteínas</small></p>
+              <p><span class="category"></span><small>Categoria</small></p>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="like-btn"><img src="./img/heart.svg" alt="Curtir" /></button><span class="likes-count">0</span>
+            <button class="comment-btn"><img src="./img/comment.svg" alt="Comentar" /></button><span class="comments-count">0</span>
+          </div>
+        </div>
+        <div class="comment-box hidden">
+          <input class="comment-input" placeholder="Escrever um comentário..." />
+          <button class="send-comment"><img src="./img/send.svg" alt="Enviar comentário" /> Enviar</button>
+          <small class="error"></small>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

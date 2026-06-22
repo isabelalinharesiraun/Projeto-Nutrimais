@@ -1,0 +1,4 @@
+id,nome,email,senha,foto_url
+1,Ana Nutri,ana@nutrimais.com,123456,./img/avatar-usuario-01.svg
+2,Carlos Silva,carlos@nutrimais.com,123456,./img/avatar-usuario-02.svg
+3,Marina Costa,marina@nutrimais.com,123456,./img/avatar-usuario-03.svg

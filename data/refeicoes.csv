@@ -1,0 +1,9 @@
+id,usuario_id,tipo,descricao,calorias,proteinas_g,data_iso
+1,1,cafe_da_manha,Iogurte natural com frutas e aveia,320,18,2026-06-21T10:15:00Z
+2,2,almoco,Arroz integral com frango grelhado e salada,650,42,2026-06-21T15:40:00Z
+3,3,jantar,Sopa de legumes com ovos mexidos,430,25,2026-06-20T22:10:00Z
+4,1,lanche,Sanduíche natural com queijo branco,280,16,2026-06-20T18:00:00Z
+5,2,cafe_da_manha,Omelete com pão integral e fruta,390,28,2026-06-19T11:30:00Z
+6,3,almoco,Peixe assado com batata doce e legumes,590,39,2026-06-19T16:20:00Z
+7,1,jantar,Wrap integral com frango e salada,470,31,2026-06-18T23:05:00Z
+8,2,lanche,Mix de castanhas e banana,240,8,2026-06-18T19:45:00Z
